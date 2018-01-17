@@ -3,7 +3,7 @@
 		{
 			"type": "amazon-ebs",
 			"region": "us-east-2",
-			"source_ami": "ami-3e713f4d",
+			"source_ami": "ami-2581aa40",
 			"instance_type": "t2.small",
 			"ssh_username": "ubuntu",
 			"ami_name": "thumbor {{timestamp}}"

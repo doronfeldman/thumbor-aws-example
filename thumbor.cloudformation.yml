@@ -2,32 +2,32 @@
 Parameters:
   KeyName:
     Type: String
-    Default: nikolas
+    Default: mixin-thumbor
   ThumborSubnets:
     Type: CommaDelimitedList
-    Default: subnet-063c705f, subnet-bd6155ca, subnet-fb2c209e
+    Default: subnet-2e2b7f47, subnet-1727fd5a, subnet-69198812
   ALBSubnets:
     Type: CommaDelimitedList
-    Default: subnet-063c705f, subnet-bd6155ca, subnet-fb2c209e
+    Default: subnet-2e2b7f47, subnet-1727fd5a, subnet-69198812
   MinSize:
     Type: Number
     Default: 1
   MaxSize:
     Type: Number
-    Default: 2
+    Default: 3
   VPC:
     Type: String
-    Default: vpc-ff84de9a
+    Default: vpc-84eda9ed
   AMIID:
     Type: String
-    Default: ami-0541bd7c
+    Default: ami-0d1e3468
   SecurityKey:
     Type: String
     Default: 'MY_SECURE_KEY'
     NoEcho: true
   CDNAlias:
     Type: String
-    Default: images.phz.cloud
+    Default: img.mixin.co.il
 Resources:
   ALBSecurityGroup:
     Type: AWS::EC2::SecurityGroup
