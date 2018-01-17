@@ -58,6 +58,8 @@ Resources:
         CidrIp: 0.0.0.0/0
   ImageBucket:
     Type: "AWS::S3::Bucket"
+  StorageBucket:
+    Type: "AWS::S3::Bucket"
   ThumborRole:
     Type: "AWS::IAM::Role"
     Properties:
@@ -81,6 +83,15 @@ Resources:
                 Effect: "Allow"
                 Action: "s3:*"
                 Resource: !Sub arn:aws:s3:::${ImageBucket}/*
+        -
+          PolicyName: "allow-storage-bucket"
+          PolicyDocument:
+            Version: "2012-10-17"
+            Statement:
+              -
+                Effect: "Allow"
+                Action: "s3:*"
+                Resource: !Sub arn:aws:s3:::${StorageBucket}/*
   ThumborInstanceProfile:
     Type: "AWS::IAM::InstanceProfile"
     Properties:
@@ -105,6 +116,7 @@ Resources:
             #!/bin/bash -xe
             sed -i 's/__AWS_REGION__/${AWS::Region}/' /etc/thumbor.conf
             sed -i 's/__IMAGE_BUCKET__/${ImageBucket}/' /etc/thumbor.conf
+            sed -i 's/__STORAGE_BUCKET__/${StorageBucket}/' /etc/thumbor.conf
             sed -i 's/__SECURITY_KEY__/${SecurityKey}/' /etc/thumbor.conf
             systemctl restart thumbor.service
   ThumborASG:
@@ -190,3 +202,6 @@ Outputs:
   ImageBucket:
     Description: S3 Bucket for source images
     Value: !Ref ImageBucket
+  StorageBucket:
+    Description: S3 Bucket for storage of images
+    Value: !Ref StorageBucket
