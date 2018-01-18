@@ -1,0 +1,4 @@
+node_modules
+clients/thumbor-js/node_modules
+clients/thumbor-js/release
+clients/thumbor-js/thumbor-config.js

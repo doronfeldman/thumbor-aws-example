@@ -1,0 +1,15 @@
+{
+  "name": "thumbor-js",
+  "version": "1.0.0",
+  "description": "Thumbor wrapper for javascript",
+  "main": "thumbor.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Doron Feldman",
+  "license": "ISC",
+  "devDependencies": {
+    "grunt": "^1.0.1",
+    "grunt-contrib-uglify": "^3.3.0"
+  }
+}
