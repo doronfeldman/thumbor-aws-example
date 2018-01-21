@@ -27,7 +27,7 @@
 (function() {
 	var pixelRatio;
 	var sizeIncraments = 25;
-	var loaderUrl = 'https://s3.us-east-2.amazonaws.com/mixin-images/loader.svg';
+	var loaderUrl = ThumborConfig.THUMBOR_LOADER;
 	var emptyOptions = baseOptions();
 
 	function baseOptions() {
